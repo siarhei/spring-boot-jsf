@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+
+    <h:form id="form">
+        <h:panelGrid columns="2">
+            <p:outputLabel for="age" value="Person Age"/>
+            <p:spinner id="age" value="#{person.age}"/>
+
+            <p:outputLabel for="birthDate" value="Person Date of Birth:" />
+            <p:calendar id="birthDate" value="#{person.birthDate}" />
+        </h:panelGrid>
+
+        <p:commandButton value="Submit" update="form"/>
+        <f:validateWholeBean value='#{person}'
+                             validationGroups="by.siarhei.sample.validator.groups.PersonValidationGroup" />
+
+        <p:messages id="messages" showDetail="true" closable="true">
+            <p:autoUpdate />
+        </p:messages>
+    </h:form>
+
+</h:body>
+</html>

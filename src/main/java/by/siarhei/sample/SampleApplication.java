@@ -13,5 +13,4 @@ public class SampleApplication {
         LOG.debug("Starting Sample Application");
         SpringApplication.run(SampleApplication.class, args);
     }
-
 }
